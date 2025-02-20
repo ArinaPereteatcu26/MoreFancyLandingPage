@@ -6,11 +6,23 @@ body {
     line-height: 1.6;
     padding: 0;
     margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 header {
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
@@ -18,6 +30,7 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 20px;
+    align-items: center;
 }
 
 nav a {
@@ -26,22 +39,21 @@ nav a {
     font-weight: bold;
     padding: 12px 20px;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s;
 }
 
 nav a:hover {
     background-color: #4CAF50;
     color: white;
+    transform: translateY(-2px);
 }
 
-/* Hero Section */
+/* Hero Section with More Visible Background */
 #hero {
-    background: url('images/NotShady.jpg') center/cover no-repeat,
-    linear-gradient(to right, #4CAF50, #2e7d32);
+    background: url('images/donkeyy.png') center/cover no-repeat;
     color: white;
     padding: 100px 20px;
     text-align: center;
-    margin-bottom: 50px;
     border-radius: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     height: 100vh;
@@ -49,184 +61,381 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: background-position 0.5s ease-out; /* Smooth background image transition */
-}
-
-/* Ensures text is readable over the image */
-#hero h1, #hero p {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-
-.cta-button {
-    background-color: #ff9800;
-    color: white;
-    padding: 15px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: background-color 0.3s;
-    position: absolute;
-    top: 20px; /* Adjust as needed for spacing from top */
-    right: 20px; /* Adjust as needed for spacing from right */
-}
-
-.cta-button:hover {
-    background-color: #e68900;
-}
-
-
-/* About Section */
-#about {
-    background: url('images/Untitled.png') center/cover no-repeat; /* Background image */
-    color: white; /* Ensure text is readable */
-    padding: 60px 20px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px;
     position: relative;
-    z-index: 1;
+    overflow: hidden;
+    margin-bottom: 0; /* Remove margin to blend with next section */
 }
 
-/* Add a semi-transparent overlay for better readability */
-#about::before {
+/* Lighter overlay to make background more visible */
+#hero::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 10%;
-    height: 5%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Reduced opacity from 0.3 to 0.2 */
+    z-index: 1;
 }
 
-/* Ensure text remains visible */
-#about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+/* Make text stand out more over the visible background */
+#hero h1, #hero p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Stronger shadow */
     position: relative;
     z-index: 2;
-}
-
-#about p {
-    font-size: 1.1rem;
-    margin: 0;
-    line-height: 1.8;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    z-index: 2;
-}
-
-/* Features Section */
-#features {
-    background-color: #f4f4f4;
-    padding: 60px 20px;
-    text-align: center;
+    padding: 10px 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px;
+    max-width: 80%;
 }
 
-#features h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-#features ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#features li {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    padding: 12px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-#features li:hover {
-    transform: translateY(-5px);
-}
-
-
-/* Roadmap Section */
-#roadmap {
-    background-color: #fff;
-    padding: 60px 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px;
-}
-
-#roadmap h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-#roadmap p {
-    font-size: 1.1rem;
-    margin: 0;
-    line-height: 1.8;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Contact Section */
-/*
-#contact {
-    background-color: #f4f4f4;
-    padding: 60px 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px;
-}
-
-#contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-#contact p {
-    font-size: 1.1rem;
-    margin: 0;
-    line-height: 1.8;
-}
-*/
-
-/*#contact a {
-    background-color: #ff9800;
-    color: white;
-    padding: 15px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    margin-top: 20px;
-    transition: background-color 0.3s;
-}*/
-
-/*
-#contact a:hover {
-    background-color: #e68900;
-}
-*/
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #222;
-    color: white;
-}
-
-footer p {
+#hero p {
+    top:5%;
     font-size: 1rem;
+    animation: fadeInUp 1s ease-out;
     margin: 0;
+}
+.hero-image {
+    background-image: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+    animation: fadeInUp 1s ease-out;
+}
+
+    .cta-button {
+        background-color: #ff9800;
+        color: white;
+        padding: 15px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+        position: relative;
+    }
+
+    .cta-button:hover {
+        background-color: #e68900;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(255, 152, 0, 0.4);
+    }
+
+
+    /* About Section */
+
+    #about {
+        background: url('images/Untitled.png') center/cover no-repeat;
+        color: white;
+        padding: 100px 20px 60px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0; /* Remove margin to blend with next section */
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Add a semi-transparent overlay for better readability */
+
+    #about::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+    }
+
+    /* Ensure text remains visible */
+
+    #about h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    #about p {
+        font-size: 1.1rem;
+        margin: 0;
+        line-height: 1.8;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Features Section */
+
+    #features {
+        background-color: #f4f4f4;
+        padding: 100px 20px 60px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0; /* Remove margin to blend with next section */
+        position: relative;
+    }
+
+    #features h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    #features ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    #features li {
+        font-size: 1.2rem;
+        flex: 1 1 200px;
+        margin: 10px;
+        padding: 25px 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    #features li:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    #features li::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background-color: #4CAF50;
+        transition: width 0.3s ease;
+        z-index: -1;
+    }
+
+    #features li:hover::before {
+        width: 100%;
+    }
+
+    #features li:hover {
+        color: white;
+    }
+
+    /* Roadmap Section */
+
+    #roadmap {
+        background-color: #fff;
+        padding: 100px 20px 60px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0; /* Remove margin to blend with next section */
+        position: relative;
+    }
+
+    #roadmap h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    #roadmap p {
+        font-size: 1.1rem;
+        margin: 0;
+        line-height: 1.8;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Contact Section */
+
+    #contact {
+        background-color: #f4f4f4;
+        padding: 100px 20px 60px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 0;
+        position: relative;
+    }
+
+    #contact h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    #contact p {
+        font-size: 1.1rem;
+        margin: 0 0 30px;
+        line-height: 1.8;
+    }
+
+    /* Footer Styles */
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #222;
+        color: white;
+    }
+
+    footer p {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Scroll animations class to be added via JavaScript */
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        nav ul {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-button {
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+        }
+    }
+    /* Scroll Animation Effects */
+
+    /* Base styles for animated elements - initially hidden/transformed */
+
+    .scroll-animate {
+        opacity: 0;
+        transition: all 0.8s ease;
+    }
+
+    /* Slide in from left */
+
+    .slide-left {
+        transform: translateX(-100px);
+    }
+
+    /* Slide in from right */
+
+    .slide-right {
+        transform: translateX(100px);
+    }
+
+    /* Slide up from bottom */
+
+    .slide-up {
+        transform: translateY(100px);
+    }
+
+    /* Fade and scale */
+
+    .fade-scale {
+        transform: scale(0.8);
+    }
+
+    /* Rotate in */
+
+    .rotate-in {
+        transform: rotate(-10deg) scale(0.9);
+    }
+
+    /* When element becomes visible (class added via JavaScript) */
+
+    .scroll-animate.visible {
+        opacity: 1;
+        transform: translate(0) scale(1) rotate(0);
+    }
+
+    /* Stagger animation delays for child elements */
+
+    .stagger-children > * {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.5s ease;
+    }
+
+    .stagger-children.visible > *:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .stagger-children.visible > *:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .stagger-children.visible > *:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .stagger-children.visible > *:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    .stagger-children.visible > *:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+
+    .stagger-children.visible > * {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+#scammed {
+    background-color: #000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scammed-image {
+    width: 50vw;  /* Adjust size to make it smaller */
+    height: 100%;  /* Keeps aspect ratio */
+    margin-bottom: 20px;
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
