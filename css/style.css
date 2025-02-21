@@ -6,7 +6,7 @@ body {
     line-height: 1.6;
     padding: 0;
     margin: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 header {
@@ -43,14 +43,14 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #4CAF50;
+    background-color: plum;
     color: white;
     transform: translateY(-2px);
 }
 
 /* Hero Section */
 #hero {
-    background: url('images/donkeyy.png') center/cover no-repeat;
+    background: url('../images/backgrounds/Home.png') center/cover no-repeat;
     color: white;
     padding: 100px 20px;
     text-align: center;
@@ -125,7 +125,7 @@ nav a:hover {
 
 /* About Section */
 #about {
-    background:url("images/About1.png") center/cover no-repeat fixed;
+    background:url("../images/backgrounds/About.png") center/cover no-repeat fixed;
     color: white;
     width: 100vw;
     height: 100vh;
@@ -146,7 +146,7 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Slightly darker overlay */
+    background: rgba(0, 0, 0, 0.3);
     z-index: -1;
 }
 
@@ -169,10 +169,10 @@ nav a:hover {
     max-width: 500px;
     margin-top: 80px;
     line-height: 1.8;
-    background: rgba(255, 255, 255, 0.1); /* Light blur background */
+    background: rgba(255, 182, 193, 0.1); /* Light blur background */
     padding: 15px 20px;
     border-radius: 20px;
-    box-shadow: 0px 4px 15px rgba(255, 192, 203, 0.2);
+    box-shadow: 0px 4px 15px rgba(255, 182, 193, 0.2);
     backdrop-filter: blur(5px);
     transition: transform 0.3s ease-in-out;
 }
@@ -185,11 +185,11 @@ nav a:hover {
 
 /* Features Section */
 #features {
-    background: url('images/Features.png') center/cover no-repeat fixed;
+    background-color:black;
     color: black;
     width: 100vw;
     height: 100vh;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -248,7 +248,7 @@ nav a:hover {
     left: 0;
     width: 5px;
     height: 100%;
-    background-color: #4CAF50;
+    background-color: plum;
     transition: width 0.3s ease;
     z-index: -1;
 }
@@ -286,7 +286,7 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Slightly darker overlay */
+    background: rgba(0, 0, 0, 0.3); 
     z-index: -1;
 }
 
@@ -309,10 +309,9 @@ nav a:hover {
     max-width: 500px;
     margin-top: 80px;
     line-height: 1.8;
-    background: rgba(255, 255, 255, 0.1); /* Light blur background */
     padding: 15px 20px;
     border-radius: 20px;
-    box-shadow: 0px 4px 15px rgba(255, 192, 203, 0.2);
+    box-shadow: 0px 4px 15px rgba(255, 182, 193, 0.1);
     backdrop-filter: blur(5px);
     transition: transform 0.3s ease-in-out;
 }
@@ -359,6 +358,202 @@ nav a:hover {
     right: 40px;
 }
 
+/*Tokenomics*/
+.explore {
+    background-color: #000000;
+    color: white;
+    padding: 50px 20px;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.explore h1 {
+    font-size: 3rem;
+    font-family: 'Pacifico', cursive;
+    font-weight: 600;
+    margin-bottom: 60px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(255, 192, 203, 0.8);
+    
+}
+
+.filters {
+    display: flex;
+    background-color: #171C2C;
+    border-radius: 50px;
+    padding: 5px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.filters button {
+    background: transparent;
+    border: none;
+    color: #8A94A6;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 50px;
+}
+
+.filters .active {
+    background-color: #6200EE;
+    color: white;
+    box-shadow: 0 4px 8px rgba(98, 0, 238, 0.3);
+}
+
+.filters button:hover:not(.active) {
+    color: #fff;
+    background-color: rgba(98, 0, 238, 0.1);
+}
+
+table {
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    margin-top: 20px;
+}
+
+thead th {
+    color: #8A94A6;
+    font-weight: 500;
+    padding: 15px;
+    text-align: left;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+tbody tr {
+    background-color: #171C2C;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+tbody tr:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+tbody td {
+    padding: 20px 15px;
+    vertical-align: middle;
+}
+
+/* First column with coin info */
+tbody td:first-child {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Last column with buttons */
+tbody td:last-child {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* Styling for positive/negative changes */
+[class^="change-"] {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.change-positive {
+    color: #00C853;
+    background-color: rgba(0, 200, 83, 0.1);
+}
+
+.change-negative {
+    color: #FF5252;
+    background-color: rgba(255, 82, 82, 0.1);
+}
+
+/* Chart styling */
+.chart-container {
+    width: 120px;
+    height: 40px;
+}
+
+/* Action buttons */
+.action-button {
+    background-color: #6200EE;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.details-button {
+    background-color: transparent;
+    border: 1px solid #6200EE;
+    color: #6200EE;
+    margin-right: 8px;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(98, 0, 238, 0.3);
+}
+
+/* Coin icons */
+.coin-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coin-icon img {
+    max-width: 100%;  /* Ensure image resizes to fit the container */
+    max-height: 100%; /* Ensure image resizes to fit the container */
+}
+.coin-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.coin-name {
+    font-weight: 600;
+}
+
+.coin-symbol {
+    color: #8A94A6;
+    font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filters {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    tbody td:first-child {
+        min-width: 150px;
+    }
+}
     /* Contact Section */
 
     #contact {
@@ -406,115 +601,7 @@ nav a:hover {
             transform: translateY(0);
         }
     }
-
-    /* Scroll animations class to be added via JavaScript */
-
-    .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        nav ul {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .cta-button {
-            margin-top: 10px;
-            display: block;
-            text-align: center;
-        }
-
-        #hero p {
-            font-size: 1.5rem;
-        }
-    }
-    /* Scroll Animation Effects */
-
-    /* Base styles for animated elements - initially hidden/transformed */
-
-    .scroll-animate {
-        opacity: 0;
-        transition: all 0.8s ease;
-    }
-
-    /* Slide in from left */
-
-    .slide-left {
-        transform: translateX(-100px);
-    }
-
-    /* Slide in from right */
-
-    .slide-right {
-        transform: translateX(100px);
-    }
-
-    /* Slide up from bottom */
-
-    .slide-up {
-        transform: translateY(100px);
-    }
-
-    /* Fade and scale */
-
-    .fade-scale {
-        transform: scale(0.8);
-    }
-
-    /* Rotate in */
-
-    .rotate-in {
-        transform: rotate(-10deg) scale(0.9);
-    }
-
-    /* When element becomes visible (class added via JavaScript) */
-
-    .scroll-animate.visible {
-        opacity: 1;
-        transform: translate(0) scale(1) rotate(0);
-    }
-
-    /* Stagger animation delays for child elements */
-
-    .stagger-children > * {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.5s ease;
-    }
-
-    .stagger-children.visible > *:nth-child(1) {
-        transition-delay: 0.1s;
-    }
-
-    .stagger-children.visible > *:nth-child(2) {
-        transition-delay: 0.2s;
-    }
-
-    .stagger-children.visible > *:nth-child(3) {
-        transition-delay: 0.3s;
-    }
-
-    .stagger-children.visible > *:nth-child(4) {
-        transition-delay: 0.4s;
-    }
-
-    .stagger-children.visible > *:nth-child(5) {
-        transition-delay: 0.5s;
-    }
-
-    .stagger-children.visible > * {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    
 
 #scammed {
     background-color: #000;
