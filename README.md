@@ -4,7 +4,7 @@ The project was built for creative exploration.
 *If the invest button is pressed you get a surprise :)*
 
 ## Live Demo
-The live demo can be found at the link:
+The live demo can be found at the link: https://arinapereteatcu26.github.io/MoreFancyLandingPage/index.html
 
 ## Features
 * Clean and modern UI
