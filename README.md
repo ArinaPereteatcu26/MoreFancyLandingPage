@@ -24,14 +24,14 @@ The live demo can be found at the link:
 * Dynamically adding info about coins in table
 
 ## Screenshots
-![Landing Page Screenshot](![Screenshot 2025-02-21 170924.png](images/screenshots/Screenshot%202025-02-21%20170924.png)
-![Landing Page Screenshot](![Screenshot 2025-02-21 170939.png](images/screenshots/Screenshot%202025-02-21%20170939.png)
-![Landing Page Screenshot](![Screenshot 2025-02-21 170948.png](images/screenshots/Screenshot%202025-02-21%20170948.png)
-![Landing Page Screenshot](![Screenshot 2025-02-21 170956.png](images/screenshots/Screenshot%202025-02-21%20170956.png)
-![Landing Page Screenshot](![Screenshot 2025-02-21 171002.png](images/screenshots/Screenshot%202025-02-21%20171002.png)
-![Landing Page Screenshot](![Screenshot 2025-02-21 171009.png](images/screenshots/Screenshot%202025-02-21%20171009.png)
-![Landing Page Screenshot](![Screenshot 2025-02-21 171016.png](images/screenshots/Screenshot%202025-02-21%20171016.png)
-![Landing Page Screenshot](![Screenshot 2025-02-21 171025.png](images/screenshots/Screenshot%202025-02-21%20171025.png)
+(![Screenshot 2025-02-21 170924.png](images/screenshots/Screenshot%202025-02-21%20170924.png)
+(![Screenshot 2025-02-21 170939.png](images/screenshots/Screenshot%202025-02-21%20170939.png)
+(![Screenshot 2025-02-21 170948.png](images/screenshots/Screenshot%202025-02-21%20170948.png)
+(![Screenshot 2025-02-21 170956.png](images/screenshots/Screenshot%202025-02-21%20170956.png)
+(![Screenshot 2025-02-21 171002.png](images/screenshots/Screenshot%202025-02-21%20171002.png)
+(![Screenshot 2025-02-21 171009.png](images/screenshots/Screenshot%202025-02-21%20171009.png)
+(![Screenshot 2025-02-21 171016.png](images/screenshots/Screenshot%202025-02-21%20171016.png)
+(![Screenshot 2025-02-21 171025.png](images/screenshots/Screenshot%202025-02-21%20171025.png)
 
 
 
